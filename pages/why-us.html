@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Choose Us — Local Energy</title>
+  <meta name="description" content="Discover why Local Energy is the most trusted name in solar. We provide complete transparency, expert installations, and maximum savings for your home and business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    /* Why Us Specific Sections */
+    .feature-section {
+      padding: 60px 0;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .feature-section.reverse {
+      flex-direction: row-reverse;
+    }
+    .fs-content {
+      flex: 1.2;
+    }
+    .fs-visual {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .fs-tag {
+      display: inline-block;
+      background: rgba(249,115,22,0.1);
+      color: var(--clr-orange);
+      border: 1px solid rgba(249,115,22,0.2);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .fs-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--clr-blue);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .fs-content p {
+      font-size: 1.05rem;
+      color: var(--clr-text-muted);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    .fs-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .fs-h-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--clr-blue);
+      font-size: 0.95rem;
+    }
+    .fs-h-item i {
+      color: var(--clr-green);
+      font-size: 1.1rem;
+    }
+    
+    /* Visual Components */
+    .fs-big-icon-wrap {
+      width: 280px;
+      height: 280px;
+      background: #fff;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: var(--clr-orange);
+      box-shadow: 0 30px 60px rgba(10,37,64,0.1);
+      position: relative;
+    }
+    .fs-big-icon-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+      z-index: -1;
+    }
+    
+    .fs-monitor-box {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      border: 1px solid rgba(10,37,64,0.05);
+    }
+    
+    .fs-subsidy-badge {
+      background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+      padding: 40px;
+      border-radius: 30px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(13,148,136,0.3);
+    }
+    .fs-subsidy-badge span { font-size: 0.9rem; opacity: 0.9; display: block; margin-bottom: 10px; }
+    .fs-subsidy-badge strong { font-size: 2.2rem; display: block; font-family: 'Poppins'; }
+
+    .img-frame {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+    }
+    .img-frame img { width: 100%; display: block; }
+
+    .fs-subtext {
+      font-size: 0.95rem;
+      color: var(--clr-blue);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+      opacity: 0.85;
+    }
+    .fs-trust-line {
+      font-size: 0.78rem;
+      color: var(--clr-text-muted);
+      margin-top: 32px;
+      display: block;
+      opacity: 0.6;
+      font-style: italic;
+    }
+    .mini-cta-row {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(10,37,64,0.05);
+      border-bottom: 1px solid rgba(10,37,64,0.05);
+    }
+    .mini-cta {
+      font-weight: 700;
+      color: var(--clr-orange);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .mini-cta:hover { gap: 16px; }
+
+    /* .section adds 80px padding. Override for why-us feature sections
+       so .feature-section handles its own vertical rhythm. */
+    section.why-fs { padding: 0; }
+
+    @media (max-width: 900px) {
+      .feature-section, .feature-section.reverse {
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .fs-highlights { grid-template-columns: 1fr; }
+      .fs-h-item { justify-content: center; }
+      .fs-content h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+    <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>Why Us</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-award"></i> Why Choose Us</div>
+      <h1>Solar Energy That Works <br /><span class="accent-text">For You</span></h1>
+      <p>From rooftop surveys to post-installation support — we handle everything so you can focus on savings.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="calculator.html" class="btn btn-outline btn-lg"><i class="fas fa-calculator"></i> Estimate Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: Savings -->
+  <section class="section why-fs" style="background: var(--clr-white);">
+    <div class="container">
+      <div class="feature-section">
+        <div class="fs-content reveal">
+          <span class="fs-tag">Bill Reduction</span>
+          <h2>Save Up to 90% on Your Electricity Bills</h2>
+          <span class="fs-subtext">Our solutions are designed to maximize savings from day one while ensuring long-term energy independence.</span>
+          <p>Drastically cut your monthly electricity costs from the very first month of installation. By generating your own power, you protect yourself against rising utility tariffs while enjoying virtually free electricity for decades.</p>
+          <div class="fs-highlights">
+            <div class="fs-h-item"><i class="fas fa-check-circle"></i> Avg. Payback: 1-10 years</div>
+            <div class="fs-h-item"><i class="fas fa-check-circle"></i> Zero Hidden Charges</div>
+            <div class="fs-h-item"><i class="fas fa-check-circle"></i> Shield from Tariff Hikes</div>
+            <div class="fs-h-item"><i class="fas fa-check-circle"></i> Reduce Dependency on Tariff Hikes</div>
+            <div class="fs-h-item"><i class="fas fa-check-circle"></i> Long-term Financial Benefits</div>
+          </div>
+          <span class="fs-trust-line">✔ Trusted by 1000+ homeowners and businesses</span>
+        </div>
+        <div class="fs-visual reveal">
+          <div class="img-frame">
+            <img src="../assets/bill_reduction.png" alt="Electricity Bill Reduction">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Clean Energy -->
+  <section class="section why-fs" style="background: #F8FAFC;">
+    <div class="container">
+      <div class="feature-section reverse">
+        <div class="fs-content reveal">
+          <span class="fs-tag">Eco-Friendly</span>
+          <h2>Clean, Green, and Sustainable Energy</h2>
+          <span class="fs-subtext">Switching to solar is the single most effective way to reduce your household's carbon footprint.</span>
+          <p>Generate pollution-free solar power and contribute to a healthier, greener India every single day. One standard residential solar system prevents over 1.5 tonnes of CO₂ emissions annually — the equivalent of planting 70+ trees.</p>
+          <div class="fs-highlights">
+            <div class="fs-h-item"><i class="fas fa-leaf"></i> 100% Carbon Neutral</div>
+            <div class="fs-h-item"><i class="fas fa-leaf"></i> Zero Noise Pollution</div>
+            <div class="fs-h-item"><i class="fas fa-leaf"></i> Sustainable Future Ready</div>
+            <div class="fs-h-item"><i class="fas fa-leaf"></i> Eco-friendly Legacy</div>
+          </div>
+          <span class="fs-trust-line">✔ Helping India reach its Green Energy goals</span>
+        </div>
+        <div class="fs-visual reveal">
+          <div class="img-frame">
+            <img src="../assets/clean_energy.png" alt="Clean and Sustainable Energy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mini-cta-row">
+    <a href="contact.html" class="mini-cta">Interested in saving? Get Free Consultation <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <!-- SECTION 3: Installation -->
+  <section class="section why-fs">
+    <div class="container">
+      <div class="feature-section">
+        <div class="fs-content reveal">
+          <span class="fs-tag">Expert Delivery</span>
+          <h2>Safe & Certified Installation</h2>
+          <span class="fs-subtext">Precision engineering and expert craftsmanship go into every panel we place on your roof.</span>
+          <p>Our MNRE-certified engineers ensure safe, efficient panel placement on any roof type. We use industry-standard mounting structures and Tier-1 components to ensure your system withstands extreme weather conditions for 25+ years.</p>
+          <div class="fs-highlights">
+            <div class="fs-h-item"><i class="fas fa-shield-alt"></i> End-to-end management</div>
+            <div class="fs-h-item"><i class="fas fa-shield-alt"></i> Safety-first practices</div>
+            <div class="fs-h-item"><i class="fas fa-shield-alt"></i> Tier-1 Components</div>
+            <div class="fs-h-item"><i class="fas fa-shield-alt"></i> Certified Engineers</div>
+          </div>
+          <span class="fs-trust-line">✔ Over 1,200 successful installations completed</span>
+        </div>
+        <div class="fs-visual reveal">
+          <div class="img-frame">
+            <img src="../assets/solar_installation.png" alt="Professional Solar Installation">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Monitoring -->
+  <section class="section why-fs" style="background: #F8FAFC;">
+    <div class="container">
+      <div class="feature-section reverse">
+        <div class="fs-content reveal">
+          <span class="fs-tag">Smart Tech</span>
+          <h2>Track Your Energy in Real-Time</h2>
+          <span class="fs-subtext">Stay connected to your energy with real-time analytics and production reports.</span>
+          <p>Monitor your energy production, consumption, and savings through our advanced mobile dashboard. Get instant alerts and performance reports on your smartphone, ensuring your system is always running at peak efficiency.</p>
+          <div class="fs-highlights" style="margin-top:24px;">
+            <div class="fs-h-item"><i class="fas fa-mobile-alt"></i> Anytime, Anywhere access</div>
+            <div class="fs-h-item"><i class="fas fa-mobile-alt"></i> Real-time Performance Alerts</div>
+          </div>
+          <span class="fs-trust-line">✔ Advanced AI-driven production tracking</span>
+        </div>
+        <div class="fs-visual reveal">
+          <div class="fs-monitor-box">
+             <div class="bm-row" style="margin-bottom: 20px;">
+                <div class="bm-head" style="display:flex; justify-content: space-between; margin-bottom:8px;">
+                  <span class="bm-label" style="font-weight:700; color:#0A2540;">Energy Generated</span>
+                  <span class="bm-val" style="color:#F97316; font-weight:800;">88%</span>
+                </div>
+                <div class="bm-bar-track" style="height:10px; background:#E2E8F0; border-radius:5px; overflow:hidden;">
+                  <div class="bm-bar-fill" style="width:88%; height:100%; background:var(--clr-orange);"></div>
+                </div>
+              </div>
+              <div class="bm-row">
+                <div class="bm-head" style="display:flex; justify-content: space-between; margin-bottom:8px;">
+                  <span class="bm-label" style="font-weight:700; color:#0A2540;">Bill Savings</span>
+                  <span class="bm-val" style="color:#22C55E; font-weight:800;">74%</span>
+                </div>
+                <div class="bm-bar-track" style="height:10px; background:#E2E8F0; border-radius:5px; overflow:hidden;">
+                  <div class="bm-bar-fill" style="width:74%; height:100%; background:#22C55E;"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="container mini-cta-row">
+    <a href="calculator.html" class="mini-cta">Calculate your potential savings now <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <!-- SECTION 5: Subsidy -->
+  <section class="section why-fs">
+    <div class="container">
+      <div class="feature-section">
+        <div class="fs-content reveal">
+          <span class="fs-tag">Government Benefits</span>
+          <h2>Get Government Subsidy Benefits</h2>
+          <span class="fs-subtext">We take the complexity out of PM Surya Ghar subsidy claims for you.</span>
+          <p>Navigating government paperwork can be complex. We handle the entire application process for the PM Surya Ghar National Portal, ensuring you receive your subsidy of upto <strong>48,000 to 1,08,000</strong> directly into your bank account.</p>
+          <div class="fs-highlights" style="margin-top:24px;">
+            <div class="fs-h-item"><i class="fas fa-file-invoice"></i> Fast-track approval assistance</div>
+            <div class="fs-h-item"><i class="fas fa-file-invoice"></i> Documentation support</div>
+          </div>
+          <span class="fs-trust-line">✔ 100% success rate in subsidy claims</span>
+        </div>
+        <div class="fs-visual reveal">
+          <div class="fs-subsidy-badge">
+            <span>PM Surya subsidy</span>
+            <strong>₹1,08,000</strong>
+            <p style="margin-top:10px; color:rgba(255,255,255,0.8); font-size:0.8rem; font-weight:600;">Max. Govt Subsidy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Warranty -->
+  <section class="section why-fs" style="background: #F0F7FF;">
+    <div class="container">
+      <div class="feature-section reverse">
+        <div class="fs-content reveal">
+          <span class="fs-tag">Peace of Mind</span>
+          <h2>Long-Term Performance Guarantee</h2>
+          <span class="fs-subtext">Invest once, enjoy benefits for 25 years with our dedicated support network.</span>
+          <p>Invest with confidence. Our Tier-1 solar panels come with a <strong>25-year performance warranty</strong>. Combined with our dedicated local maintenance support, your investment is protected from day one through the entire lifespan of the system.</p>
+          <div class="fs-highlights" style="margin-top:24px;">
+            <div class="fs-h-item"><i class="fas fa-headset"></i> Dedicated local support team</div>
+            <div class="fs-h-item"><i class="fas fa-headset"></i> Reliable 24/7 maintenance</div>
+          </div>
+          <span class="fs-trust-line">✔ Lucknow's most reliable solar maintenance network</span>
+        </div>
+        <div class="fs-visual reveal">
+          <div class="img-frame">
+            <img src="../assets/solar_maintenance.png" alt="Long Term Performance Guarantee">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY SECTION -->
+  <section class="section" style="padding: 60px 0; background: #F8FAFC;">
+    <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align:center;">
+      <span class="fs-tag">Summary</span>
+      <h2 style="font-family: 'Poppins', sans-serif; font-size: 2.8rem; font-weight: 900; color: var(--clr-blue); margin-bottom: 24px;">Why Local Energy?</h2>
+      <p style="font-size: 1.15rem; line-height: 1.8; color: var(--clr-text-muted); margin-bottom: 40px;">We combine cutting-edge technology, decades of engineering expertise, and a customer-first service approach to deliver solar solutions that are not just reliable and efficient, but built for long-term savings and generational sustainability.</p>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
+        <a href="contact.html" class="btn btn-primary btn-lg" style="padding: 18px 44px; font-size: 1.1rem;">Get Your Free Solar Consultation</a>
+        <p style="font-size: 0.85rem; color: var(--clr-text-muted); opacity: 0.7;">✔ No obligation • ✔ Expert site visit • ✔ Custom savings report</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="contact.html" class="sticky-quote-btn" id="stickyQuote">
+    <i class="fas fa-bolt"></i> Get Your Quotes
+  </a>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="../script.js"></script>
+</body>
+</html>

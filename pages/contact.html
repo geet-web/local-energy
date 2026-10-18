@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Local Energy — Get a Free Solar Quote</title>
+  <meta name="description" content="Contact Local Energy for a free solar consultation. Fill our quick form or WhatsApp us directly. Site visit within 48 hours, no commitment needed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      grid-template-rows: auto auto;
+      gap: 24px 32px;
+      align-items: stretch;
+      margin-left: 0;
+      padding-left: 0;
+      margin-bottom: 60px;
+    }
+    .contact-info-card {
+      grid-row: 1;
+      grid-column: 1;
+      background: linear-gradient(135deg, #0A2540, #1A3A5C);
+      border-radius: 24px;
+      padding: 28px 24px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Start from top */
+    }
+    .card-separator {
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 24px 0;
+    }
+    .trust-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .trust-item i {
+      color: #FBBF24;
+      font-size: 0.85rem;
+    }
+    .card-cta {
+      margin-top: auto;
+      background: white;
+      color: #0A2540;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-align: center;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .card-cta:hover {
+      background: #F97316;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(249,115,22,0.3);
+    }
+    .contact-form-card {
+      grid-row: 1;
+      grid-column: 2;
+      background: white;
+      border-radius: 28px;
+      padding: 44px 40px;
+      box-shadow: 0 10px 40px rgba(10,37,64,0.08);
+      border: 1px solid rgba(10,37,64,0.06);
+    }
+    .wa-highlight {
+      grid-row: 2;
+      grid-column: 1;
+      background: white;
+      border: 1px solid rgba(22,163,74,0.15);
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(22,163,74,0.06);
+    }
+    .contact-info-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem; font-weight: 800;
+      color: white; margin-bottom: 20px;
+    }
+    .ci-row {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
+    }
+    .ci-row-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(249,115,22,0.2);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: #FBBF24;
+    }
+    .ci-row div strong { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+    .ci-row div span { font-weight: 600; color: white; font-size: 0.95rem; }
+    .wa-highlight strong { display: block; font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #0A2540; margin-bottom: 8px; font-weight: 800; }
+    .wa-highlight p { font-size: 0.88rem; color: #64748B; margin-bottom: 20px; line-height: 1.6; }
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366; color: white;
+      padding: 12px 32px; border-radius: 999px;
+      font-size: 0.95rem; font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 10px 20px rgba(37,211,102,0.2);
+    }
+    .wa-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37,211,102,0.3); }
+
+    .contact-form-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem; font-weight: 800;
+      color: #0A2540; margin-bottom: 8px;
+    }
+    .contact-form-card > p { font-size: 0.88rem; color: #64748B; margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: #0A2540; }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 13px 16px;
+      border: 2px solid rgba(10,37,64,0.1);
+      border-radius: 12px;
+      font-size: 0.9rem; color: #0A2540;
+      background: white; outline: none;
+      transition: border-color 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #F97316; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(10,37,64,0.3); }
+    .form-success-msg {
+      display: none;
+      text-align: center;
+      padding: 48px 20px;
+    }
+    .form-success-msg i { font-size: 3.5rem; color: #16A34A; margin-bottom: 16px; }
+    .form-success-msg h4 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 800; color: #0A2540; margin-bottom: 8px; }
+    .form-success-msg p { color: #64748B; font-size: 0.92rem; }
+
+    .office-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .office-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.06);
+    }
+    .office-card i { font-size: 1.4rem; color: #F97316; margin-bottom: 14px; }
+    .office-card h4 { font-family: 'Poppins', sans-serif; font-size: 0.97rem; font-weight: 800; color: #0A2540; margin-bottom: 8px; }
+    .office-card p { font-size: 0.83rem; color: #64748B; line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .contact-layout { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+      }
+      .contact-info-card { grid-row: 1; grid-column: 1; }
+      .contact-form-card { grid-row: 3; grid-column: 1; }
+      .wa-highlight { grid-row: 2; grid-column: 1; }
+      .feature-card { grid-row: 4; grid-column: 1; } 
+      .form-row { grid-template-columns: 1fr; }
+      .office-cards { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+      <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>Contact</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-envelope"></i> Free Consultation — No Commitment</div>
+      <h1>Let's Start Your <span class="accent-text">Solar Journey Together</span></h1>
+      <p>Fill the quick form below or WhatsApp us directly. Our solar advisors will get in touch within 2 hours for a free site visit.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="calculator.html" class="btn btn-outline btn-lg"><i class="fas fa-calculator"></i> Estimate Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section" style="padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="contact-layout">
+        
+        <!-- Row 1, Col 1: Blue Card -->
+        <div class="contact-info-card reveal">
+          <h3>Reach Us Directly</h3>
+          <div class="ci-row">
+            <div class="ci-row-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <strong>Call / WhatsApp</strong>
+              <span>+91 98765 43210</span>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-row-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <span>hello@localenergy.in</span>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-row-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Working Hours</strong>
+              <span>Mon – Sat: 9 AM – 7 PM</span>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-row-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <strong>Head Office</strong>
+              <span>12/3 Vibhuti Khand, Gomti Nagar, Lucknow – 226010</span>
+            </div>
+          </div>
+
+          <div class="card-separator"></div>
+
+          <div class="trust-list">
+            <div class="trust-item">
+              <i class="fas fa-bolt"></i>
+              <span>Response time: 10–15 minutes</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Free consultation / No hidden charges</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-user-shield"></i>
+              <span>Dedicated Local Support</span>
+            </div>
+            <div class="trust-item">
+              <i class="fas fa-calendar-check"></i>
+              <span>Fast Installation Scheduling</span>
+            </div>
+          </div>
+
+          <a href="tel:+919876543210" class="card-cta">
+            <i class="fas fa-phone"></i> Call Solar Advisor
+          </a>
+        </div>
+
+        <!-- Row 2, Col 1: WhatsApp -->
+        <div class="wa-highlight reveal">
+          <div class="wa-content">
+            <strong>Prefer WhatsApp?</strong>
+            <p>Chat with a solar expert instantly. Response within 15 minutes.</p>
+            <a href="https://wa.me/919876543210?text=Hi%20Local%20Energy!%20I%27m%20interested%20in%20solar%20for%20my%20home." target="_blank" class="wa-btn">
+              <i class="fab fa-whatsapp"></i> Open WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 1, Col 2: White Form -->
+        <div class="contact-form-card reveal">
+          <h3>Get Your Free Solar Quote</h3>
+          <p>Takes less than 2 minutes. 100% free, no strings attached.</p>
+
+          <div id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" id="f-name" placeholder="Ramesh Kumar" required />
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="f-phone" placeholder="+91 98765 43210" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your City *</label>
+                <select id="f-city">
+                  <option value="">Select your city</option>
+                  <option>Lucknow</option>
+                  <option>Kanpur</option>
+                  <option>Agra</option>
+                  <option>Delhi NCR</option>
+                  <option>Noida</option>
+                  <option>Ghaziabad</option>
+                  <option>Varanasi</option>
+                  <option>Prayagraj</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Monthly Electricity Bill (₹)</label>
+                <input type="number" id="f-bill" placeholder="e.g. 3500" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Type of Property</label>
+              <select id="f-type">
+                <option value="">Select property type</option>
+                <option>Home / Residential</option>
+                <option>Factory / Industrial</option>
+                <option>Office / Commercial</option>
+                <option>School / Institution</option>
+                <option>Hospital / Healthcare</option>
+                <option>Hotel / Hospitality</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tell us more (optional)</label>
+              <textarea id="f-msg" placeholder="Any specific requirements, questions, or details..."></textarea>
+            </div>
+            <button class="btn btn-primary btn-full" id="submitBtn" style="margin-top:4px;">
+              <i class="fas fa-paper-plane"></i> Send My Request — It's Free
+            </button>
+            <p style="font-size:0.75rem;color:#94A3B8;text-align:center;margin-top:14px;">
+              <i class="fas fa-lock"></i> Your information is 100% secure. We never share your data.
+            </p>
+          </div>
+
+          <div class="form-success-msg" id="successMsg">
+            <i class="fas fa-check-circle"></i>
+            <h4>Request Received!</h4>
+            <p>Thank you! Our solar advisor will call you within 2 hours to discuss your requirements and schedule a free site visit.</p>
+          </div>
+        </div>
+
+        <!-- Row 2, Col 2: What happens check box -->
+        <div class="feature-card reveal" style="grid-row: 2; grid-column: 2; border-left: 4px solid #F97316; padding: 32px; background: white; border-radius: 24px; box-shadow: 0 4px 20px rgba(10,37,64,0.06);">
+          <h3 style="font-size:1rem;margin-bottom:14px; font-family:'Poppins'; font-weight:800; color:#0A2540;">What happens after you reach out?</h3>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:#64748B;">
+              <i class="fas fa-check-circle" style="color:#F97316;margin-top:3px;flex-shrink:0;"></i>
+              Our advisor calls/WhatsApps you within 2 hours
+            </li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:#64748B;">
+              <i class="fas fa-check-circle" style="color:#F97316;margin-top:3px;flex-shrink:0;"></i>
+              Free site visit scheduled at your preferred time
+            </li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:#64748B;">
+              <i class="fas fa-check-circle" style="color:#F97316;margin-top:3px;flex-shrink:0;"></i>
+              Detailed savings report within 24 hours
+            </li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:#64748B;">
+              <i class="fas fa-check-circle" style="color:#F97316;margin-top:3px;flex-shrink:0;"></i>
+              Zero pressure. You decide when you're ready.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICE LOCATIONS -->
+  <section class="section" style="background:#F8FAFF;padding-top:80px;padding-bottom:40px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Offices</span>
+        <h2 class="section-title">Find Us <span class="accent-text">Near You</span></h2>
+      </div>
+      <div class="office-cards">
+        <div class="office-card reveal">
+          <i class="fas fa-building"></i>
+          <h4>Lucknow HQ</h4>
+          <p>12/3 Vibhuti Khand, Gomti Nagar<br />Lucknow – 226010, UP<br /><br /><strong style="color:#F97316;">+91 98765 43210</strong></p>
+        </div>
+        <div class="office-card reveal">
+          <i class="fas fa-industry"></i>
+          <h4>Kanpur Branch</h4>
+          <p>A-22 Udyog Nagar, Panki<br />Kanpur – 208020, UP<br /><br /><strong style="color:#F97316;">+91 98765 43211</strong></p>
+        </div>
+        <div class="office-card reveal">
+          <i class="fas fa-city"></i>
+          <h4>Delhi NCR Branch</h4>
+          <p>B-14 Sector 62, Noida<br />Gautam Buddha Nagar – 201309<br /><br /><strong style="color:#F97316;">+91 98765 43212</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+          <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="#contactForm" class="sticky-quote-btn" id="stickyQuote"><i class="fas fa-bolt"></i> Get Your Quotes</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const stickyQuote = document.getElementById('stickyQuote');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(e => e.forEach(el => el.isIntersecting && el.target.classList.add('visible')), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const city = document.getElementById('f-city').value;
+      if (!name || !phone || !city) {
+        alert('Please fill in your Name, Phone, and City to continue.');
+        return;
+      }
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    });
+  </script>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

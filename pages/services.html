@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Services — Local Energy</title>
+  <meta name="description" content="Explore Local Energy's full range of solar services — residential, commercial, maintenance, and consultation for homes and businesses across India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    .service-detail-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.06);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      transition: all 0.3s;
+    }
+    .service-detail-card:hover { box-shadow: 0 20px 50px rgba(10,37,64,0.12); }
+    .service-detail-card.reverse { direction: rtl; }
+    .service-detail-card.reverse > * { direction: ltr; }
+    .sdc-visual {
+      height: 100%;
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sdc-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Subtle inner shine overlay */
+    .sdc-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* Icon soft drop-shadow for crisp white visibility */
+    .sdc-visual i {
+      position: relative; z-index: 1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
+    }
+    /* All color modifier classes → orange (keeps HTML classes but overrides colors) */
+    .sdc-visual.orange,
+    .sdc-visual.green,
+    .sdc-visual.blue {
+      background: linear-gradient(135deg, #F97316 0%, #EA6A0A 60%, #D4590A 100%);
+    }
+    .sdc-body { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .sdc-tag {
+      display: inline-block;
+      background: rgba(249,115,22,0.1); color: #F97316;
+      border: 1px solid rgba(249,115,22,0.25);
+      padding: 4px 14px; border-radius: 999px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 16px; width: fit-content;
+    }
+    .sdc-body h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem; font-weight: 800; color: #0A2540;
+      margin-bottom: 14px;
+    }
+    .sdc-body p { color: #64748B; line-height: 1.8; margin-bottom: 20px; font-size: 0.95rem; }
+    .sdc-checklist { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .sdc-checklist li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.88rem; color: #0F172A; font-weight: 500;
+    }
+    .sdc-checklist li i { color: #F97316; font-size: 0.8rem; flex-shrink: 0; }
+    @media (max-width: 900px) {
+      .service-detail-card { grid-template-columns: 1fr; direction: ltr; }
+      .service-detail-card.reverse { direction: ltr; }
+      .sdc-visual { height: 220px; }
+      .sdc-body { padding: 32px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+      <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>Services</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-solar-panel"></i> End-to-End Solar Solutions</div>
+      <h1>Everything Solar, <br /><span class="accent-text">All Under One Roof</span></h1>
+      <p>From residential rooftops and commercial plants to ongoing maintenance and subsidy management — we deliver it all.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="calculator.html" class="btn btn-outline btn-lg"><i class="fas fa-calculator"></i> Estimate Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW CARDS -->
+  <section class="section" style="padding-top:60px;padding-bottom:40px;">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card reveal" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto 20px;"><i class="fas fa-home"></i></div>
+          <h3>Residential Solar</h3>
+          <p>Rooftop systems for homes — 1 kW to 10 kW, designed around your monthly bill and available roof space.</p>
+        </div>
+        <div class="feature-card reveal" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto 20px;"><i class="fas fa-building"></i></div>
+          <h3>Commercial Solar</h3>
+          <p>High-capacity ground and rooftop systems for factories, hospitals, hotels, schools, and offices.</p>
+        </div>
+        <div class="feature-card reveal" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto 20px;"><i class="fas fa-wrench"></i></div>
+          <h3>Solar Maintenance</h3>
+          <p>Scheduled AMC plans, panel cleaning, inverter checkups, and performance audits to keep output at peak.</p>
+        </div>
+        <div class="feature-card reveal" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto 20px;"><i class="fas fa-drafting-compass"></i></div>
+          <h3>Design & Consultation</h3>
+          <p>Free expert consultation, shadow analysis, DISCOM paperwork, and subsidy filing — all on our team.</p>
+        </div>
+        <div class="feature-card reveal" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto 20px;"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Smart Monitoring</h3>
+          <p>Real-time solar monitoring via our app — track generation, consumption, and earnings from your phone.</p>
+        </div>
+        <div class="feature-card reveal" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto 20px;"><i class="fas fa-battery-full"></i></div>
+          <h3>Battery Storage</h3>
+          <p>Pair your solar system with advanced lithium battery storage for round-the-clock backup power.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESIDENTIAL -->
+  <section class="section" style="padding-top:80px;padding-bottom:40px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Service Detail</span>
+        <h2 class="section-title">Explore Each <span class="accent-text">Service</span></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:40px;">
+        <div class="service-detail-card reveal">
+          <div class="sdc-visual"><img src="../assets/residential_solar.png" alt="Residential Solar Installation" /></div>
+          <div class="sdc-body">
+            <span class="sdc-tag">Most Popular</span>
+            <h2>Residential Solar Systems</h2>
+            <p>Our home solar packages are designed to eliminate electricity bills entirely. We assess your roof, usage, and budget to deliver a system that works from day one.</p>
+            <ul class="sdc-checklist">
+              <li><i class="fas fa-check-circle"></i> Systems from 1 kW to 10 kW</li>
+              <li><i class="fas fa-check-circle"></i> PM Surya Ghar subsidy filing included</li>
+              <li><i class="fas fa-check-circle"></i> Net metering application included</li>
+              <li><i class="fas fa-check-circle"></i> 25-year Tier-1 panel warranty</li>
+              <li><i class="fas fa-check-circle"></i> Free app-based monitoring</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Get Residential Quote</a>
+          </div>
+        </div>
+
+        <div class="service-detail-card reverse reveal">
+          <div class="sdc-visual"><img src="../assets/commercial_solar.png" alt="Commercial Solar Solutions" /></div>
+          <div class="sdc-body">
+            <span class="sdc-tag">Best for Businesses</span>
+            <h2>Commercial Solar Solutions</h2>
+            <p>Cut your factory or office energy cost by 60–80% with a custom commercial solar system. We handle everything from feasibility to grid commissioning.</p>
+            <ul class="sdc-checklist">
+              <li><i class="fas fa-check-circle"></i> 20 kW to 1 MW+ systems</li>
+              <li><i class="fas fa-check-circle"></i> Accelerated depreciation benefits (40%)</li>
+              <li><i class="fas fa-check-circle"></i> DISCOM integration and compliance</li>
+              <li><i class="fas fa-check-circle"></i> Turnkey EPC with minimal downtime</li>
+              <li><i class="fas fa-check-circle"></i> ROI typically within 3–5 years</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Get Commercial Quote</a>
+          </div>
+        </div>
+
+        <div class="service-detail-card reveal">
+          <div class="sdc-visual"><img src="../assets/solar_maintenance.png" alt="Solar Maintenance and AMC" /></div>
+          <div class="sdc-body">
+            <span class="sdc-tag">Protect Your Investment</span>
+            <h2>Solar Maintenance & AMC</h2>
+            <p>Regular maintenance is key to sustained performance. Our Annual Maintenance Contracts (AMC) include everything needed to keep your system running at 100%.</p>
+            <ul class="sdc-checklist">
+              <li><i class="fas fa-check-circle"></i> Quarterly panel washing</li>
+              <li><i class="fas fa-check-circle"></i> Inverter health checks</li>
+              <li><i class="fas fa-check-circle"></i> String performance testing</li>
+              <li><i class="fas fa-check-circle"></i> Priority emergency response</li>
+              <li><i class="fas fa-check-circle"></i> Detailed monthly generation report</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="service-detail-card reverse reveal">
+          <div class="sdc-visual"><img src="../assets/solar_consultation.png" alt="Solar Design and Consultation" /></div>
+          <div class="sdc-body">
+            <span class="sdc-tag">Start Here</span>
+            <h2>Free Consultation & Design</h2>
+            <p>Not sure what system you need? Our engineers visit your site, analyse your electricity bills and roof layout, and provide a detailed, no-obligation savings report within 24 hours.</p>
+            <ul class="sdc-checklist">
+              <li><i class="fas fa-check-circle"></i> Free site visit & shadow analysis</li>
+              <li><i class="fas fa-check-circle"></i> Detailed ROI projection</li>
+              <li><i class="fas fa-check-circle"></i> Subsidy eligibility check</li>
+              <li><i class="fas fa-check-circle"></i> No pressure, no obligation</li>
+              <li><i class="fas fa-check-circle"></i> Report within 24 hours</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Book Free Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:60px;padding-bottom:20px;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Not Sure Which Service You Need?</h2>
+        <p>Talk to our solar advisors for free. We'll recommend the right system for your home or business — zero pressure, zero cost.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+          <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+          <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="contact.html" class="sticky-quote-btn" id="stickyQuote"><i class="fas fa-bolt"></i> Get Your Quotes</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const stickyQuote = document.getElementById('stickyQuote');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(e => e.forEach(el => el.isIntersecting && el.target.classList.add('visible')), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

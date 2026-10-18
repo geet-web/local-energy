@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Local Energy — India's Trusted Solar Company</title>
+  <meta name="description" content="Learn about Local Energy — our mission, team, and 15+ years of making clean solar energy affordable and accessible for Indian homes and businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+    }
+    .value-card {
+      background: linear-gradient(135deg, #0A2540, #1A3A5C);
+      border-radius: 24px;
+      padding: 36px 28px;
+      color: white;
+      transition: all 0.3s;
+    }
+    .value-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(10,37,64,0.25); }
+    .value-card i { font-size: 2.2rem; color: #FBBF24; margin-bottom: 18px; }
+    .value-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 10px;
+    }
+    .value-card p { font-size: 0.87rem; color: rgba(255,255,255,0.72); line-height: 1.7; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 24px;
+    }
+    .team-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.05);
+      transition: all 0.3s;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(10,37,64,0.1); }
+    .team-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, #F97316, #FBBF24);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem; font-weight: 900; color: white;
+    }
+    .team-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem; font-weight: 800; color: #0A2540; margin-bottom: 4px;
+    }
+    .team-card .role { font-size: 0.8rem; color: #F97316; font-weight: 600; margin-bottom: 10px; }
+    .team-card p { font-size: 0.82rem; color: #64748B; line-height: 1.65; }
+    .cert-strip {
+      display: flex; flex-wrap: wrap;
+      gap: 16px; justify-content: center;
+    }
+    .cert-badge {
+      display: flex; align-items: center; gap: 12px;
+      background: white;
+      border: 1.5px solid rgba(10,37,64,0.1);
+      border-radius: 16px;
+      padding: 14px 24px;
+      box-shadow: 0 4px 16px rgba(10,37,64,0.06);
+    }
+    .cert-badge i { font-size: 1.5rem; color: #F97316; }
+    .cert-badge span { font-size: 0.87rem; font-weight: 700; color: #0A2540; }
+    @media (max-width: 900px) {
+      .value-grid { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .value-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+      <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>About Us</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-leaf"></i> Since 2009 — 15+ Years of Solar</div>
+      <h1>We Make Solar <span class="accent-text">Simple & Reliable</span></h1>
+      <p>Founded with a mission to make clean energy accessible to every Indian home and business, regardless of their budget.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="calculator.html" class="btn btn-outline btn-lg"><i class="fas fa-calculator"></i> Estimate Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="reveal">
+          <span class="section-tag" style="display:inline-block;margin-bottom:16px;">Our Story</span>
+          <h2 class="section-title" style="text-align:left;margin-bottom:20px;">15 Years of Powering <span class="accent-text">Indian Homes</span></h2>
+          <p style="color:#64748B;line-height:1.9;margin-bottom:16px;font-size:0.95rem;">Founded in 2009 in Lucknow, Local Energy started as a two-person team helping families in Uttar Pradesh reduce their electricity bills. Today, we're a 200+ member organisation with over 1,200 successful solar installations across Lucknow, Kanpur, Delhi NCR, and 5 other cities.</p>
+          <p style="color:#64748B;line-height:1.9;margin-bottom:28px;font-size:0.95rem;">We are MNRE-empanelled, ISO-certified, and trusted by thousands of homeowners, factories, hospitals, and schools. But we still believe in treating every customer like they're our first — with complete transparency, honest pricing, and after-sales support that never ends.</p>
+          <div class="why-list" style="gap:12px;">
+            <div class="why-item" style="padding:16px 20px;">
+              <div class="why-icon"><i class="fas fa-handshake"></i></div>
+              <div><h4>Honest & Transparent</h4><p>No hidden charges. Every cost is detailed upfront before you commit.</p></div>
+            </div>
+            <div class="why-item" style="padding:16px 20px;">
+              <div class="why-icon"><i class="fas fa-award"></i></div>
+              <div><h4>Certified Excellence</h4><p>MNRE empanelled, ISO 9001:2015 certified installer with trained engineers.</p></div>
+            </div>
+            <div class="why-item" style="padding:16px 20px;">
+              <div class="why-icon"><i class="fas fa-headset"></i></div>
+              <div><h4>Support for Life</h4><p>We don't disappear after installation. Our support team is always reachable.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="two-col-img reveal">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Local Energy team" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" style="background:#F8FAFF;padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Impact</span>
+        <h2 class="section-title">Numbers That <span class="accent-text">Speak for Themselves</span></h2>
+      </div>
+      <div class="inner-stats-row">
+        <div class="inner-stat-card reveal">
+          <div class="num">1,200<span class="plus">+</span></div>
+          <div class="lbl">Installations Completed</div>
+        </div>
+        <div class="inner-stat-card reveal">
+          <div class="num">15<span class="plus">+</span></div>
+          <div class="lbl">Years of Experience</div>
+        </div>
+        <div class="inner-stat-card reveal">
+          <div class="num">8<span class="plus">+</span></div>
+          <div class="lbl">Cities Covered</div>
+        </div>
+        <div class="inner-stat-card reveal">
+          <div class="num">98<span class="plus">%</span></div>
+          <div class="lbl">Customer Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VALUES -->
+  <section class="section" style="padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Values</span>
+        <h2 class="section-title">What We Stand <span class="accent-text">For</span></h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <i class="fas fa-sun"></i>
+          <h3>Clean Energy for All</h3>
+          <p>Solar shouldn't be a luxury. We work hard to make it affordable for every income level — guiding customers through subsidies and financing options.</p>
+        </div>
+        <div class="value-card reveal">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Customer First, Always</h3>
+          <p>Every decision we make is filtered through one question: "Is this best for our customer?" Honest advice, fair pricing, no upselling.</p>
+        </div>
+        <div class="value-card reveal">
+          <i class="fas fa-leaf"></i>
+          <h3>Planet-Positive Business</h3>
+          <p>We're committed to reducing India's carbon footprint. Every installation we do prevents tonnes of CO₂ from entering the atmosphere annually.</p>
+        </div>
+        <div class="value-card reveal">
+          <i class="fas fa-cogs"></i>
+          <h3>Engineering Excellence</h3>
+          <p>We use only Tier-1 panels and certified inverters. Every system is designed by engineers and installed by trained, certified technicians.</p>
+        </div>
+        <div class="value-card reveal">
+          <i class="fas fa-rupee-sign"></i>
+          <h3>Maximum Value</h3>
+          <p>We optimise every system for the best cost-to-savings ratio, ensuring the fastest possible ROI for each unique property and budget.</p>
+        </div>
+        <div class="value-card reveal">
+          <i class="fas fa-users"></i>
+          <h3>Community Impact</h3>
+          <p>Beyond individual savings, we're building a cleaner, more energy-independent India — one rooftop at a time, city by city.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section" style="background:#F8FAFF;padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Trust & Compliance</span>
+        <h2 class="section-title">Our <span class="accent-text">Certifications</span></h2>
+        <p class="section-subtitle">Every certification we hold is a commitment to quality, safety, and ethical business practices.</p>
+      </div>
+      <div class="cert-strip">
+        <div class="cert-badge reveal"><i class="fas fa-award"></i><span>MNRE Empanelled Installer</span></div>
+        <div class="cert-badge reveal"><i class="fas fa-certificate"></i><span>ISO 9001:2015 Certified</span></div>
+        <div class="cert-badge reveal"><i class="fas fa-shield-alt"></i><span>BIS Approved Components</span></div>
+        <div class="cert-badge reveal"><i class="fas fa-bolt"></i><span>DISCOM Approved</span></div>
+        <div class="cert-badge reveal"><i class="fas fa-file-contract"></i><span>PM Surya Ghar Registered Vendor</span></div>
+        <div class="cert-badge reveal"><i class="fas fa-hard-hat"></i><span>Electrical Safety Compliance</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:60px;padding-bottom:40px;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Join 1,200+ Happy Customers Across India</h2>
+        <p>Whether you're a homeowner looking to cut electricity bills or a business reducing operational costs — we're here to help you every step of the way.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get Free Consultation</a>
+          <a href="services.html" class="btn btn-outline btn-lg"><i class="fas fa-solar-panel"></i> Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+          <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="contact.html" class="sticky-quote-btn" id="stickyQuote"><i class="fas fa-bolt"></i> Get Your Quotes</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const stickyQuote = document.getElementById('stickyQuote');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(e => e.forEach(el => el.isIntersecting && el.target.classList.add('visible')), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Savings Calculator — Local Energy</title>
+  <meta name="description" content="Calculate how much you can save with rooftop solar. Get an instant estimate of your annual savings, ROI period, and government subsidies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    .calc-wrapper {
+      display: flex;
+      gap: 32px;
+      align-items: stretch;
+      max-width: 1260px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .calc-card, .result-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .calc-card {
+      background: white;
+      border-radius: 28px;
+      padding: 36px 32px;
+      box-shadow: 0 10px 40px rgba(10,37,64,0.08);
+      border: 1px solid rgba(10,37,64,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+    /* Footer block for alignment */
+    .card-footer { margin-top: auto; padding-top: 16px; }
+    .calc-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem; font-weight: 800;
+      color: #0A2540; margin-bottom: 16px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+    .form-group label { font-size: 0.83rem; font-weight: 600; color: #0A2540; }
+    .form-group input, .form-group select {
+      padding: 13px 16px;
+      border: 2px solid rgba(10,37,64,0.1);
+      border-radius: 12px;
+      font-size: 0.9rem; color: #0A2540;
+      background: white; outline: none;
+      transition: border-color 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: #F97316; }
+    .result-card {
+      background: linear-gradient(135deg, #0A2540 0%, #1A3A5C 100%);
+      border-radius: 28px;
+      padding: 36px 32px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Push CTA + note to the bottom of the right card */
+    .result-cta { margin-top: auto; }
+    .result-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      color: white; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .result-row:last-of-type { border-bottom: none; }
+    .result-row span { font-size: 0.87rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+    .result-row strong {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem; font-weight: 800; color: white;
+    }
+    .result-row strong.orange { color: #FBBF24; }
+    .result-cta { margin-top: 0; }
+    .result-note { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 12px; text-align: center; }
+    .roi-examples {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+    .roi-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.05);
+    }
+    .roi-card .size {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: #F97316; margin-bottom: 12px;
+    }
+    .roi-card .saving {
+      font-size: 1.8rem; font-weight: 900; color: #0A2540;
+      font-family: 'Poppins', sans-serif; line-height: 1;
+    }
+    .roi-card .period { font-size: 0.78rem; color: #64748B; margin-top: 6px; font-weight: 500; }
+    .roi-card .detail { font-size: 0.82rem; color: #64748B; margin-top: 10px; line-height: 1.6; }
+    @media (max-width: 900px) {
+      .calc-wrapper { flex-direction: column; }
+      .roi-examples { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+      <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>Calculator</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-calculator"></i> Instant Savings Estimate</div>
+      <h1>How Much Will You <span class="accent-text">Save with Solar?</span></h1>
+      <p>Enter your monthly electricity bill and roof details to get an instant, personalised savings estimate and subsidy calculation.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="how-it-works.html" class="btn btn-outline btn-lg"><i class="fas fa-play"></i> See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section" style="padding-top:80px;padding-bottom:60px;">
+    <div class="container">
+      <div class="calc-wrapper">
+        <!-- Input Form -->
+        <div class="calc-card">
+          <h3><i class="fas fa-sliders-h" style="color:#F97316;margin-right:10px;"></i>Your Details</h3>
+          <div class="form-group">
+            <label>Monthly Electricity Bill (₹)</label>
+            <input type="number" id="c-bill" placeholder="e.g. 3500" min="500" max="100000" value="3500" />
+          </div>
+          <div class="form-group">
+            <label>State / DISCOM</label>
+            <select id="c-state">
+              <option value="UP">Uttar Pradesh (UPPCL)</option>
+              <option value="DL">Delhi (BSES / TPDDL)</option>
+              <option value="MH">Maharashtra (MSEDCL)</option>
+              <option value="GJ">Gujarat (PGVCL)</option>
+              <option value="RJ">Rajasthan (JVVNL)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Type of Connection</label>
+            <select id="c-type">
+              <option value="residential">Residential / Home</option>
+              <option value="commercial">Commercial / Business</option>
+              <option value="industrial">Industrial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Available Roof Area (sq ft) — Approx.</label>
+            <input type="number" id="c-roof" placeholder="e.g. 500" min="100" value="500" />
+          </div>
+          <div class="form-group">
+            <label>Roof Type</label>
+            <select id="c-roof-type">
+              <option value="rcc">RCC (Flat Concrete)</option>
+              <option value="metal">Metal Sheet (Industrial)</option>
+              <option value="tile">Tile / Sloped Roof</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Electricity Usage Pattern</label>
+            <select id="c-usage">
+              <option value="daytime">Daytime Heavy Usage</option>
+              <option value="nighttime">Nighttime Heavy Usage</option>
+              <option value="balanced">Balanced Usage</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Battery Backup Needed?</label>
+            <select id="c-backup">
+              <option value="no">No (Grid-Tied Only)</option>
+              <option value="yes">Yes (Hybrid / Off-Grid)</option>
+            </select>
+          </div>
+          <p style="font-size: 0.75rem; color: #64748B; margin-top: 4px;">
+            More details help us give a more accurate savings estimate.
+          </p>
+          
+          <div class="card-footer">
+            <button class="btn btn-primary btn-full" id="calcBtn">
+              <i class="fas fa-bolt"></i> Calculate My Savings
+            </button>
+            <div style="text-align: center; font-size: 0.7rem; color: #22C55E; font-weight: 600; margin-top: 12px; letter-spacing: 0.3px;">
+              <i class="fas fa-check"></i> Free Consultation &nbsp;•&nbsp; <i class="fas fa-check"></i> No Hidden Charges
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="result-card" id="resultCard">
+          <h3><i class="fas fa-chart-line" style="color:#FBBF24;"></i> Your Savings Estimate</h3>
+          <div class="result-row">
+            <span>Recommended System Size</span>
+            <strong class="orange" id="r-size">3.5 kW</strong>
+          </div>
+          <div class="result-row">
+            <span>Estimated System Cost</span>
+            <strong id="r-cost">₹1,75,000</strong>
+          </div>
+          <div class="result-row">
+            <span>Govt. Subsidy Available</span>
+            <strong class="orange" id="r-subsidy">₹63,000</strong>
+          </div>
+          <div class="result-row">
+            <span>Net Cost After Subsidy</span>
+            <strong id="r-net">₹1,12,000</strong>
+          </div>
+          <div class="result-row">
+            <span>Annual Savings</span>
+            <strong class="orange" id="r-annual">₹42,000</strong>
+          </div>
+          <div class="result-row">
+            <span>Monthly Bill Reduction</span>
+            <strong id="r-monthly">~84%</strong>
+          </div>
+          <div class="result-row">
+            <span>ROI Period</span>
+            <strong class="orange" id="r-roi">2.7 Years</strong>
+          </div>
+          <div class="result-row">
+            <span>25-Year Total Savings</span>
+            <strong id="r-total">₹10,50,000</strong>
+          </div>
+          
+          <!-- Why these numbers matter block -->
+          <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 20px; margin-top: 20px; border: 1px solid rgba(255,255,255,0.1);">
+            <h4 style="font-family: 'Poppins'; font-size: 0.85rem; font-weight: 800; color: #FBBF24; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Why these numbers matter?</h4>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5; margin: 0;">Your estimated savings are calculated based on your usage, location, and system size to give you a realistic idea of long-term benefits.</p>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.85); font-weight: 500;">
+              <i class="fas fa-check-circle" style="color: #FBBF24;"></i> 100% Free Consultation
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.85); font-weight: 500;">
+              <i class="fas fa-check-circle" style="color: #FBBF24;"></i> Govt Subsidy Assistance Included
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.85); font-weight: 500;">
+              <i class="fas fa-check-circle" style="color: #FBBF24;"></i> No Hidden Charges
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <div class="result-cta">
+              <a href="contact.html" class="btn btn-primary btn-full"><i class="fas fa-phone"></i> Get Exact Quote — Free</a>
+            </div>
+            <p class="result-note">*Estimates are indicative. Actual savings depend on roof orientation & shading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI EXAMPLES -->
+  <section class="section" style="background:#F8FAFF;padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Savings Examples</span>
+        <h2 class="section-title">What Other Customers <span class="accent-text">Saved</span></h2>
+        <p class="section-subtitle">Based on actual installations across our service areas — these figures are verified from real customer accounts.</p>
+      </div>
+      <div class="roi-examples">
+        <div class="roi-card reveal">
+          <div class="size">3 kW — Home System</div>
+          <div class="saving">₹45,840</div>
+          <div class="period">saved per year</div>
+          <div class="detail">Bill: ₹4,200 → ₹380<br/>ROI in 2.4 years<br/>Subsidy claimed: ₹1,08,000</div>
+        </div>
+        <div class="roi-card reveal">
+          <div class="size">10 kW — Large Home / Villa</div>
+          <div class="saving">₹1,32,000</div>
+          <div class="period">saved per year</div>
+          <div class="detail">Bill: ₹12,000 → ₹1,200<br/>ROI in 3.1 years<br/>Net cost after subsidy: ₹3.2L</div>
+        </div>
+        <div class="roi-card reveal">
+          <div class="size">50 kW — Commercial</div>
+          <div class="saving">₹6,00,000</div>
+          <div class="period">saved per year</div>
+          <div class="detail">Factory bill: ₹60,000 → ₹8,000<br/>ROI in 4.2 years<br/>40% accelerated depreciation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW ROI WORKS -->
+  <section class="section" style="padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Understanding Your ROI</span>
+        <h2 class="section-title">How Solar ROI <span class="accent-text">Works</span></h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3>Immediate Bill Savings</h3>
+          <p>From the very first month your system goes live, you stop paying for units your panels generate. This saving compounds over 25 years.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
+          <h3>Net Metering Credits</h3>
+          <p>Any energy you don't use gets credited to your DISCOM account and can offset future bills — or even earn you a check from the utility.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-award"></i></div>
+          <h3>Government Subsidies</h3>
+          <p>Central and state subsidies directly reduce your upfront cost, cutting the ROI period from 6 years to as little as 2–3 years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;padding-bottom:40px;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Get Your Exact Savings Report — Free</h2>
+        <p>Our engineers will visit your site, assess roof and bill, and provide a detailed, binding savings projection within 24 hours.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Book Free Site Visit</a>
+          <a href="https://wa.me/919876543210" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+          <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="contact.html" class="sticky-quote-btn" id="stickyQuote"><i class="fas fa-bolt"></i> Get Your Quotes</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const stickyQuote = document.getElementById('stickyQuote');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    const obs = new IntersectionObserver(e => e.forEach(el => el.isIntersecting && el.target.classList.add('visible')), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Calculator logic
+    document.getElementById('calcBtn').addEventListener('click', () => {
+      const bill = parseFloat(document.getElementById('c-bill').value) || 3500;
+      const type = document.getElementById('c-type').value;
+      const tariff = type === 'residential' ? 7.5 : 9.0;
+      const unitsPerMonth = bill / tariff;
+      const solarKW = Math.ceil((unitsPerMonth / 120) * 10) / 10;
+      const costPerKW = type === 'residential' ? 50000 : 45000;
+      const systemCost = Math.round(solarKW * costPerKW / 1000) * 1000;
+      const subsidyKW = solarKW <= 2 ? solarKW * 30000 : 60000 + (Math.min(solarKW, 3) - 2) * 18000;
+      const subsidy = Math.min(Math.round(subsidyKW / 1000) * 1000, 78000);
+      const net = systemCost - subsidy;
+      const annualSavings = Math.round(bill * 12 * 0.82);
+      const roi = (net / annualSavings).toFixed(1);
+      const total = annualSavings * 25;
+
+      document.getElementById('r-size').textContent = solarKW.toFixed(1) + ' kW';
+      document.getElementById('r-cost').textContent = '₹' + systemCost.toLocaleString('en-IN');
+      document.getElementById('r-subsidy').textContent = '₹' + subsidy.toLocaleString('en-IN');
+      document.getElementById('r-net').textContent = '₹' + net.toLocaleString('en-IN');
+      document.getElementById('r-annual').textContent = '₹' + annualSavings.toLocaleString('en-IN');
+      document.getElementById('r-monthly').textContent = '~82%';
+      document.getElementById('r-roi').textContent = roi + ' Years';
+      document.getElementById('r-total').textContent = '₹' + total.toLocaleString('en-IN');
+    });
+  </script>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

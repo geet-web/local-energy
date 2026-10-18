@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar FAQ — Common Questions About Solar Panel Installation</title>
+  <meta name="description" content="Answers to the most common questions about rooftop solar panels — cost, subsidies, installation time, maintenance, warranties, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    .faq-category-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: #0A2540;
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px; margin-top: 48px;
+    }
+    .faq-category-title:first-of-type { margin-top: 0; }
+    .faq-category-title i { color: #F97316; font-size: 1rem; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .faq-sidebar {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.06);
+      position: sticky;
+      top: 100px;
+    }
+    .faq-sidebar h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem; font-weight: 800;
+      color: #0A2540; margin-bottom: 16px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .faq-sidebar ul { display: flex; flex-direction: column; gap: 6px; }
+    .faq-sidebar a {
+      font-size: 0.85rem; color: #64748B; font-weight: 500;
+      padding: 8px 14px; border-radius: 10px;
+      display: flex; align-items: center; gap: 10px;
+      transition: all 0.2s;
+    }
+    .faq-sidebar a:hover, .faq-sidebar a.active {
+      background: rgba(249,115,22,0.08);
+      color: #F97316;
+    }
+    .faq-sidebar a i { font-size: 0.8rem; width: 16px; }
+    .faq-sidebar .sidebar-cta {
+      margin-top: 28px;
+      padding: 24px;
+      padding-top: 28px;
+      background: #F8FAFF;
+      border-radius: 18px;
+      border: 1px dashed rgba(10,37,64,0.12);
+    }
+    .faq-sidebar .sidebar-cta p { font-size: 0.8rem; color: #475569; margin-bottom: 18px; line-height: 1.6; text-align: center; font-weight: 500; }
+    .faq-sidebar .sidebar-cta .btn { color: white !important; font-size: 0.85rem; height: 44px; margin-bottom: 10px; }
+    .faq-sidebar .sidebar-cta .btn-ghost { color: #F97316 !important; background: white; border-width: 2px; }
+    .faq-sidebar .sidebar-cta .btn-ghost:hover { color: white !important; }
+    @media (max-width: 900px) {
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+      <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>FAQ</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-question-circle"></i> Frequently Asked Questions</div>
+      <h1>Everything You Want to Know <span class="accent-text">About Solar</span></h1>
+      <p>Honest, simple answers to the most common questions we hear from homeowners and businesses considering rooftop solar.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="calculator.html" class="btn btn-outline btn-lg"><i class="fas fa-calculator"></i> Estimate Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:80px;padding-bottom:40px;">
+    <div class="container">
+      <div class="faq-layout">
+
+        <!-- Sidebar nav -->
+        <div class="faq-sidebar reveal">
+          <h4>Jump to Section</h4>
+          <ul>
+            <li><a href="#faq-cost"><i class="fas fa-rupee-sign"></i> Cost & Investment</a></li>
+            <li><a href="#faq-subsidy"><i class="fas fa-award"></i> Subsidies & Benefits</a></li>
+            <li><a href="#faq-install"><i class="fas fa-tools"></i> Installation Process</a></li>
+            <li><a href="#faq-performance"><i class="fas fa-chart-line"></i> Performance & Output</a></li>
+            <li><a href="#faq-maintenance"><i class="fas fa-wrench"></i> Maintenance & AMC</a></li>
+            <li><a href="#faq-warranty"><i class="fas fa-shield-alt"></i> Warranty & Support</a></li>
+            <li><a href="#faq-grid"><i class="fas fa-exchange-alt"></i> Grid & Net Metering</a></li>
+          </ul>
+          <div class="sidebar-cta">
+            <p>Still have a question? Our solar experts answer within 2 hours.</p>
+            <a href="contact.html" class="btn btn-primary btn-full">
+              <i class="fas fa-comments"></i> Ask an Expert
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" class="btn btn-ghost btn-full">
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ Content -->
+        <div>
+
+          <!-- Cost -->
+          <div id="faq-cost">
+            <div class="faq-category-title"><i class="fas fa-rupee-sign"></i> Cost & Investment</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How much does a rooftop solar system cost in India? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">A residential solar system typically costs between ₹45,000 to ₹60,000 per kW before subsidies. A 3 kW system for a typical Indian home costs around ₹1.5 to ₹1.8 lakh before subsidy. After the PM Surya Ghar subsidy (up to ₹78,000), your net investment can be as low as ₹75,000 to ₹1 lakh.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How long will it take to recover my solar investment? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Most residential solar systems see a return on investment (ROI) in 2.5 to 4 years. After that, you generate effectively free electricity for the remaining 21+ years of your system's life. On a 3 kW system with a ₹3,000 bill, your ROI is typically under 3 years.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Are there any hidden charges or ongoing costs? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">There are no hidden charges. The only potential ongoing cost is an optional Annual Maintenance Contract (AMC), which covers panel cleaning, inverter checkups, and emergency support. AMC plans start as low as ₹3,000 per year for a 3 kW system.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Is financing / EMI available for solar installation? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Yes. We partner with leading banks and NBFCs to offer attractive solar loans at interest rates starting from 7% per annum. Many customers find that their monthly EMI is lower than their current electricity bill — meaning they're cash-flow positive from day one.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsidies -->
+          <div id="faq-subsidy">
+            <div class="faq-category-title"><i class="fas fa-award"></i> Subsidies & Benefits</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">What is the PM Surya Ghar Muft Bijli Yojana? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">PM Surya Ghar is a central government initiative that provides direct subsidies for residential rooftop solar. You get ₹30,000 per kW for the first 2 kW and ₹18,000/kW for the 3rd kW — up to a maximum of ₹78,000. We handle the entire application and approval process for you.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Who is eligible for the solar subsidy? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Any Indian homeowner who owns the property (or has the owner's consent) and has a valid DISCOM electricity connection is eligible. Subsidies are for residential connections only — commercial and industrial units do not qualify for PM Surya Ghar but can avail accelerated depreciation benefits.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How long does the subsidy approval process take? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Once your installation is complete and submitted, subsidy processing typically takes 30–90 days. The amount is directly credited to your registered bank account via DISCOM. We track the status and keep you updated throughout.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Installation -->
+          <div id="faq-install">
+            <div class="faq-category-title"><i class="fas fa-tools"></i> Installation Process</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How long does the installation take? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">A standard 3–5 kW residential installation is completed in 1–2 days. Larger commercial systems (20–100 kW) typically take 3–7 days. The entire process from booking to going live — including DISCOM approvals and subsidy filing — is completed within 7–14 working days.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Will you drill holes in my roof during installation? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Our mounting systems use hook-based or ballasted (weight-based) structures that require minimal or zero drilling on most RCC (concrete) roofs. For metal or tin shed roofs, we use clamp systems. Our certified installers ensure there is zero risk of leakage.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What happens to my electricity connection during installation? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Your electricity supply remains uninterrupted during the entire installation. There may be a brief (1–2 hour) shutdown on the day of inverter connection for safety, but this is coordinated with you in advance and done early morning to cause minimal disruption.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Do I need permission from my housing society? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">For individual homes: no. For apartments and flat owners: you'll need your housing society committee's NOC. Our team assists with drafting the NOC application and has templates that most societies approve quickly. We also help negotiate with RWAs if needed.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance -->
+          <div id="faq-performance">
+            <div class="faq-category-title"><i class="fas fa-chart-line"></i> Performance & Output</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How much electricity will my solar system generate? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">In most Indian cities, a 1 kW solar system generates approximately 4–5 units (kWh) of electricity per day on average, or 120–150 units per month. So a 3 kW system generates 360–450 units per month — enough to cover the average Indian household's consumption.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What happens on cloudy days or during monsoon? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Solar panels still generate electricity on cloudy or overcast days — typically 20–40% of peak output. During monsoon months, generation drops, but remains steady enough to significantly offset bills. You remain connected to the grid and draw power as needed.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Can I monitor my solar system's performance? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Yes. All systems we install include a Wi-Fi-enabled monitoring portal and mobile app. You can track real-time generation, energy exports, savings, and detailed performance analytics — anytime, from anywhere, completely free.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Maintenance -->
+          <div id="faq-maintenance">
+            <div class="faq-category-title"><i class="fas fa-wrench"></i> Maintenance & AMC</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How much maintenance does a solar system require? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Solar systems are largely maintenance-free. The primary maintenance activity is panel cleaning — every 2–3 months using plain water to remove dust, which typically takes 30 minutes. Inverters should be checked annually. With our AMC, we do all of this for you.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What does your Annual Maintenance Contract (AMC) include? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Our AMC plans include quarterly panel washing, annual inverter health check, string performance testing, monitoring report review, and priority emergency response for any faults. Plans start from ₹3,000/year for a 3 kW system.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Warranty -->
+          <div id="faq-warranty">
+            <div class="faq-category-title"><i class="fas fa-shield-alt"></i> Warranty & Support</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">What warranty do I get with my solar system? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Solar panels come with a 25-year linear performance warranty from the manufacturer (minimum 80% output at year 25). Inverters carry a 5–10 year warranty. Our installation workmanship is guaranteed for 5 years — covering wiring, mounting, and connections.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What if there's a fault or problem with my system? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Contact us via phone, WhatsApp, or email. For in-warranty issues, we dispatch a technician within 48–72 hours at no charge. Our monitoring system also automatically detects performance drops and alerts us — we often know about a fault before you do.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid -->
+          <div id="faq-grid">
+            <div class="faq-category-title"><i class="fas fa-exchange-alt"></i> Grid & Net Metering</div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">What is net metering and how does it benefit me? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Net metering allows you to export excess solar energy back to the DISCOM grid in exchange for credits on your electricity account. When your panels produce more than you consume (typically daytime), those units are credited to you and offset future bills — or earn you a cheque from the utility.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Can I go completely off-grid? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Yes, with battery storage. An off-grid or hybrid system with lithium battery backup allows you to run completely independent of the grid. This is costlier but makes sense for areas with frequent power cuts. We offer hybrid systems combining solar generation with battery storage for 24/7 power independence.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Will solar work during a power cut? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Standard grid-tied solar systems do NOT work during a power outage (for safety reasons — to prevent back-feeding the grid while linemen work on it). If you need power during cuts, you need to add a battery backup or choose a hybrid inverter system — which we offer.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;padding-bottom:40px;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Didn't Find Your Answer?</h2>
+        <p>Our solar advisors are available 6 days a week and respond on WhatsApp within 15 minutes. Ask us anything — no question is too small.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Advisor</a>
+          <a href="https://wa.me/919876543210" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+          <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="contact.html" class="sticky-quote-btn" id="stickyQuote"><i class="fas fa-bolt"></i> Get Your Quotes</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const stickyQuote = document.getElementById('stickyQuote');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(e => e.forEach(el => el.isIntersecting && el.target.classList.add('visible')), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+/* ═══════════════════════════════════════════════════════════════
+   LOCAL ENERGY — INNER PAGES SHARED STYLES
+   Extends style.css — do not duplicate base variables
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Inner page navbar: match homepage size exactly ── */
+.navbar { padding: 10px 0 !important; }
+.navbar.scrolled { padding: 8px 0 !important; }
+.main-logo { height: 50px !important; }
+.nav-links a { font-size: 0.9rem !important; font-weight: 600 !important; }
+
+
+/* ── Inner Page Hero Banner ── */
+.inner-hero {
+  min-height: 52vh;
+  background:
+    linear-gradient(135deg, rgba(10,37,64,0.3) 0%, rgba(10,37,64,0.1) 100%),
+    url('../assets/hero_new.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* ← centres content horizontally */
+  padding: 140px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;        /* ← ensures inline children centre-align */
+}
+.inner-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(22,163,74,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.1) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* The container that holds all hero text as one cohesive block */
+.inner-hero-content {
+  position: relative;
+  z-index: 1;
+  /* Centre and constrain the column */
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* ← all children centred horizontally */
+  text-align: center;
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 0;                    /* spacing handled by margin-bottom on children */
+}
+
+/* H1 */
+.inner-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  /* Prevent orphaned single words on last line */
+  text-wrap: balance;
+}
+.inner-hero h1 .accent-text { color: #F97316; }
+
+/* Subtitle paragraph */
+.inner-hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  max-width: 620px;          /* narrower than h1 for comfortable reading width */
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  line-height: 1.75;
+}
+
+/* Buttons row — always centred in hero */
+.inner-hero .hero-btns {
+  justify-content: center;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Breadcrumb — sits above the hero text block, also centred */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 18px;
+}
+.breadcrumb a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+.breadcrumb a:hover { color: #F97316; }
+.breadcrumb i { font-size: 0.65rem; }
+
+/* ── Feature Grid (3-col) ── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: 0 4px 20px rgba(10,37,64,0.06);
+  border: 1px solid rgba(10,37,64,0.06);
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(10,37,64,0.1);
+}
+.feature-icon {
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: white;
+  margin-bottom: 20px;
+}
+.feature-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem; font-weight: 800;
+  color: #0A2540; margin-bottom: 10px;
+}
+.feature-card p { font-size: 0.9rem; color: #64748B; line-height: 1.7; }
+
+/* ── Dark CTA Banner ── */
+.cta-banner {
+  background: linear-gradient(135deg, #0A2540 0%, #1A3A5C 100%);
+  border-radius: 28px;
+  padding: 48px 32px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.08);
+}
+.cta-banner h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.22rem);
+  font-weight: 800; color: white;
+  margin-bottom: 12px;
+}
+.cta-banner p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-banner .hero-btns { justify-content: center; }
+
+/* ── Step Cards ── */
+.steps-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  position: relative;
+}
+.steps-list::before {
+  content: '';
+  position: absolute;
+  top: 62px; left: 12%;
+  right: 12%; height: 2px;
+  background: linear-gradient(90deg, #F97316, #FBBF24);
+  z-index: 0;
+}
+.step-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+  border: 1px solid rgba(10,37,64,0.05);
+  position: relative; z-index: 1;
+  transition: all 0.3s ease;
+}
+.step-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(10,37,64,0.1); }
+.step-num {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, #F97316, #FBBF24);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem; font-weight: 900; color: white;
+  margin: 0 auto 20px;
+}
+.step-icon-wrap {
+  font-size: 1.8rem; color: #F97316; margin-bottom: 16px;
+}
+.step-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem; font-weight: 800;
+  color: #0A2540; margin-bottom: 10px;
+}
+.step-card p { font-size: 0.85rem; color: #64748B; line-height: 1.7; }
+
+/* ── Subsidy / Info Strip ── */
+.info-strip {
+  background: linear-gradient(135deg, rgba(22,163,74,0.07), rgba(22,163,74,0.03));
+  border: 1px solid rgba(22,163,74,0.18);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.info-strip-icon {
+  font-size: 3rem; color: #16A34A; flex-shrink: 0;
+}
+.info-strip h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem; font-weight: 800;
+  color: #0A2540; margin-bottom: 10px;
+}
+.info-strip p { color: #64748B; font-size: 0.95rem; line-height: 1.8; }
+
+/* ── FAQ Accordion ── */
+.faq-category-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0A2540;
+  margin: 60px auto 20px;
+  max-width: 820px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(10,37,64,0.05);
+}
+.faq-category-title i {
+  color: #F97316;
+  margin-right: 12px;
+}
+.faq-list { max-width: 820px; margin: 0 auto 40px; display: flex; flex-direction: column; gap: 20px; }
+.faq-item {
+  background: white;
+  border: 1px solid rgba(10,37,64,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+.faq-item:hover { box-shadow: 0 8px 30px rgba(10,37,64,0.08); }
+.faq-question {
+  width: 100%; background: none; border: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 32px; cursor: pointer;
+  font-size: 1.05rem; font-weight: 600; color: #0A2540;
+  font-family: 'Poppins', sans-serif; text-align: left;
+  transition: all 0.3s;
+}
+.faq-question i { font-size: 0.9rem; color: #F97316; transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+.faq-item.open .faq-question i { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0 32px;
+  font-size: 0.95rem; color: #64748B; line-height: 1.8;
+}
+.faq-item.open .faq-answer { max-height: 300px; padding: 0 32px 28px; }
+
+/* ── Testimonial mini strip ── */
+.mini-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.mini-tcard {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+  border: 1px solid rgba(10,37,64,0.05);
+}
+.mini-tcard .stars { color: #F59E0B; font-size: 0.85rem; margin-bottom: 12px; }
+.mini-tcard p { font-size: 0.88rem; color: #0F172A; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.mini-tcard-author { display: flex; align-items: center; gap: 12px; }
+.mini-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, #0A2540, #1A3A5C);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; color: white; flex-shrink: 0;
+}
+.mini-tcard-author strong { display: block; font-size: 0.85rem; color: #0A2540; font-weight: 700; }
+.mini-tcard-author span { font-size: 0.75rem; color: #64748B; }
+
+/* ── Why Choose Us list ── */
+.why-list { display: flex; flex-direction: column; gap: 18px; }
+.why-item {
+  display: flex; align-items: flex-start; gap: 18px;
+  background: white; border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 16px rgba(10,37,64,0.06);
+  border: 1px solid rgba(10,37,64,0.05);
+  transition: all 0.3s;
+}
+.why-item:hover { transform: translateX(6px); box-shadow: 0 8px 30px rgba(10,37,64,0.1); }
+.why-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: linear-gradient(135deg, #F97316, #FBBF24);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: white;
+}
+.why-item div h4 { font-family: 'Poppins', sans-serif; font-weight: 800; color: #0A2540; margin-bottom: 4px; font-size: 0.97rem; }
+.why-item div p { font-size: 0.85rem; color: #64748B; line-height: 1.6; }
+
+/* ── Stats Row (reusable on inner pages) ── */
+.inner-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.inner-stat-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(10, 37, 64, 0.04);
+  border: 1px solid rgba(10, 37, 64, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.inner-stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(10, 37, 64, 0.12);
+}
+.inner-stat-card .num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem; font-weight: 800;
+  color: #F97316; /* Fully Solar Orange */
+  line-height: 1;
+}
+.inner-stat-card .plus { 
+  color: #F97316; /* Fully Solar Orange */
+  font-weight: 700;
+}
+.inner-stat-card .lbl {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem; font-weight: 600; 
+  color: rgba(10, 37, 64, 0.6); /* Deep Blue with reduced opacity */
+  text-transform: uppercase; 
+  letter-spacing: 1.2px; 
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* ── Two-col layout ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col-img {
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10,37,64,0.14);
+}
+.two-col-img img { width: 100%; height: 400px; object-fit: cover; }
+
+/* ── Contact form (inner) ── */
+.contact-inner-form {
+  background: white;
+  border-radius: 24px;
+  padding: 44px;
+  box-shadow: 0 10px 40px rgba(10,37,64,0.08);
+  border: 1px solid rgba(10,37,64,0.06);
+}
+.contact-inner-form h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem; font-weight: 800;
+  color: #0A2540; margin-bottom: 24px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+  .steps-list { grid-template-columns: 1fr 1fr; }
+  .steps-list::before { display: none; }
+  .mini-testi-grid { grid-template-columns: 1fr 1fr; }
+  .inner-stats-row { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .info-strip { flex-direction: column; gap: 20px; }
+  .cta-banner { padding: 48px 28px; }
+  .inner-hero { padding: 130px 20px 70px; min-height: 45vh; }
+  .inner-hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+  .inner-hero p { font-size: 0.97rem; }
+}
+@media (max-width: 600px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .steps-list { grid-template-columns: 1fr; }
+  .mini-testi-grid { grid-template-columns: 1fr; }
+  .inner-stats-row { grid-template-columns: 1fr 1fr; }
+  .inner-hero { padding: 120px 16px 60px; }
+  .inner-hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); letter-spacing: -0.25px; }
+  .inner-hero p { font-size: 0.93rem; max-width: 100%; }
+  .inner-hero .hero-btns { flex-direction: column; align-items: center; }
+  .inner-hero .hero-btns .btn { width: 100%; justify-content: center; }
+}

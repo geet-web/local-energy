@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Solar Installation Works — Local Energy</title>
+  <meta name="description" content="From booking a free consultation to watching your electricity bill drop — here's exactly how Local Energy's solar installation process works, step by step." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="inner.css" />
+  <style>
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 39px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #F97316 0%, #FBBF24 100%);
+    }
+    .tl-item {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      padding-bottom: 56px;
+      position: relative;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      width: 80px; height: 80px; flex-shrink: 0;
+      background: linear-gradient(135deg, #F97316, #FBBF24);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: white;
+      box-shadow: 0 8px 25px rgba(249,115,22,0.35);
+      position: relative; z-index: 1;
+    }
+    .tl-content {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 36px;
+      flex: 1;
+      box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.06);
+      transition: all 0.3s;
+    }
+    .tl-content:hover { transform: translateX(6px); box-shadow: 0 12px 35px rgba(10,37,64,0.1); }
+    .tl-step {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #F97316; margin-bottom: 8px;
+    }
+    .tl-content h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem; font-weight: 800; color: #0A2540; margin-bottom: 12px;
+    }
+    .tl-content p { color: #64748B; line-height: 1.8; font-size: 0.93rem; margin-bottom: 16px; }
+    .tl-detail {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .tl-tag {
+      background: rgba(249,115,22,0.08);
+      color: #F97316;
+      border: 1px solid rgba(249,115,22,0.2);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem; font-weight: 600;
+    }
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 24px;
+    }
+    .guarantee-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(10,37,64,0.07);
+      border: 1px solid rgba(10,37,64,0.05);
+      transition: all 0.3s;
+    }
+    .guarantee-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(10,37,64,0.1); }
+    .guarantee-card i { font-size: 2rem; color: #F97316; margin-bottom: 16px; }
+    .guarantee-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.97rem; font-weight: 800; color: #0A2540; margin-bottom: 8px;
+    }
+    .guarantee-card p { font-size: 0.82rem; color: #64748B; line-height: 1.6; }
+    @media (max-width: 900px) {
+      .guarantee-grid { grid-template-columns: 1fr 1fr; }
+      .timeline::before { left: 29px; }
+      .tl-dot { width: 60px; height: 60px; font-size: 1.2rem; }
+    }
+    @media (max-width: 600px) {
+      .guarantee-grid { grid-template-columns: 1fr 1fr; }
+      .tl-content { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+      <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><i class="fas fa-chevron-right"></i><span>How It Works</span>
+      </div>
+      <div class="inner-hero-badge"><i class="fas fa-route"></i> Simple 4-Step Process</div>
+      <h1>Going Solar is <span class="accent-text">Easier Than You Think</span></h1>
+      <p>From your first call to generating clean energy — our end-to-end process is designed to be completely hassle-free.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Get a Free Quote</a>
+        <a href="calculator.html" class="btn btn-outline btn-lg"><i class="fas fa-calculator"></i> Estimate Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW STATS -->
+  <section class="section" style="padding:60px 0 0; background: #FFFFFF;">
+    <div class="container">
+      <div class="inner-stats-row">
+        <div class="inner-stat-card reveal">
+          <div class="num">7-10<span class="plus"> Days</span></div>
+          <div class="lbl">Avg. Installation Timeline</div>
+        </div>
+        <div class="inner-stat-card reveal">
+          <div class="num">1<span class="plus"> Call</span></div>
+          <div class="lbl">To Start Your Journey</div>
+        </div>
+        <div class="inner-stat-card reveal">
+          <div class="num">₹0</div>
+          <div class="lbl">Cost to Book Consultation</div>
+        </div>
+        <div class="inner-stat-card reveal">
+          <div class="num">24<span class="plus">h</span></div>
+          <div class="lbl">Report Delivery Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Step by Step</span>
+        <h2 class="section-title">Your Journey to <span class="accent-text">Free Electricity</span></h2>
+        <p class="section-subtitle">Every step is handled by our team — you just need to say yes, and we take care of everything else.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fas fa-phone"></i></div>
+          <div class="tl-content">
+            <div class="tl-step">Step 01</div>
+            <h3>Book a Free Consultation</h3>
+            <p>Call us, fill our form, or WhatsApp — whichever is easiest. We'll schedule a free site visit within 24–48 hours at a time that's convenient for you. No commitment, no fees.</p>
+            <div class="tl-detail">
+              <span class="tl-tag">Free of cost</span>
+              <span class="tl-tag">No obligation</span>
+              <span class="tl-tag">Site visit within 48 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fas fa-search-location"></i></div>
+          <div class="tl-content">
+            <div class="tl-step">Step 02</div>
+            <h3>Site Survey & Custom Design</h3>
+            <p>Our certified engineer visits your property to measure roof dimensions, check orientation, assess shading, and analyse your last 12 months of electricity bills. Within 24 hours, you receive a full savings report and a custom system design for your specific roof.</p>
+            <div class="tl-detail">
+              <span class="tl-tag">Shadow analysis</span>
+              <span class="tl-tag">Bill review</span>
+              <span class="tl-tag">System design</span>
+              <span class="tl-tag">Savings report</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fas fa-file-signature"></i></div>
+          <div class="tl-content">
+            <div class="tl-step">Step 03</div>
+            <h3>Documentation & Subsidy Filing</h3>
+            <p>Once you approve the design, our team handles all the paperwork — DISCOM approvals, net metering application, PM Surya Ghar subsidy form, and structural report. You sign once; we handle the rest.</p>
+            <div class="tl-detail">
+              <span class="tl-tag">DISCOM approval</span>
+              <span class="tl-tag">Subsidy filing</span>
+              <span class="tl-tag">Net metering</span>
+              <span class="tl-tag">Structural NOC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fas fa-tools"></i></div>
+          <div class="tl-content">
+            <div class="tl-step">Step 04</div>
+            <h3>Professional Installation</h3>
+            <p>Our MNRE-certified technicians arrive, set up the mounting structure, install Tier-1 solar panels, wire the inverter, and commission the system — typically within 1–2 days. Zero mess, zero structural drilling beyond what's needed.</p>
+            <div class="tl-detail">
+              <span class="tl-tag">MNRE certified team</span>
+              <span class="tl-tag">1–2 day install</span>
+              <span class="tl-tag">Tier-1 panels</span>
+              <span class="tl-tag">Clean installation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"><i class="fas fa-bolt"></i></div>
+          <div class="tl-content">
+            <div class="tl-step">Step 05</div>
+            <h3>Go Live & Start Saving</h3>
+            <p>Your system is live! We walk you through the monitoring app, show you your real-time generation data, and hand over all warranty documents. Your first electricity bill will already reflect the savings. We continue supporting you with AMC services for years to come.</p>
+            <div class="tl-detail">
+              <span class="tl-tag">App walkthrough</span>
+              <span class="tl-tag">Real-time monitoring</span>
+              <span class="tl-tag">Warranty docs</span>
+              <span class="tl-tag">Ongoing support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section class="section" style="background:#F8FAFF;padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Commitments</span>
+        <h2 class="section-title">What We <span class="accent-text">Guarantee</span></h2>
+      </div>
+      <div class="guarantee-grid">
+        <div class="guarantee-card reveal">
+          <i class="fas fa-shield-alt"></i>
+          <h4>25-Year Panel Warranty</h4>
+          <p>Every panel we install carries a 25-year linear performance warranty from the manufacturer.</p>
+        </div>
+        <div class="guarantee-card reveal">
+          <i class="fas fa-calendar-check"></i>
+          <h4>5-Year Workmanship</h4>
+          <p>Installation quality, wiring, and mounting structure guaranteed for 5 full years by Local Energy.</p>
+        </div>
+        <div class="guarantee-card reveal">
+          <i class="fas fa-phone"></i>
+          <h4>Lifetime Support</h4>
+          <p>We're reachable via phone, WhatsApp, and email — forever. You are never alone with your system.</p>
+        </div>
+        <div class="guarantee-card reveal">
+          <i class="fas fa-award"></i>
+          <h4>MNRE Certified</h4>
+          <p>We are an empanelled MNRE solar installer, ensuring your system qualifies for all government subsidies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ TEASER -->
+  <section class="section" style="padding-top:80px;padding-bottom:80px;">
+    <div class="container" style="text-align:center;">
+      <span class="section-tag">Have Questions?</span>
+      <h2 class="section-title" style="margin:16px auto;">Still Not Sure? <span class="accent-text">We've Got Answers</span></h2>
+      <p class="section-subtitle" style="margin:0 auto 36px;">Check our comprehensive FAQ or talk to a solar advisor right now.</p>
+      <div class="hero-btns" style="justify-content:center;">
+        <a href="faq.html" class="btn btn-primary btn-lg"><i class="fas fa-question-circle"></i> View All FAQs</a>
+        <a href="contact.html" class="btn btn-ghost btn-lg"><i class="fas fa-comments"></i> Talk to an Advisor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;padding-bottom:40px;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Ready to Start Your Solar Journey?</h2>
+        <p>Book your free consultation now. Site visit in 48 hours, system live in 7 days. It's really that simple.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Book Free Consultation</a>
+          <a href="https://wa.me/919876543210" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+          <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <img src="../assets/logo.png" alt="Local Energy" class="main-logo" />
+          </a>
+          <p>India's trusted partner for rooftop solar solutions. Helping homes and businesses generate clean, affordable energy since 2009.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="calculator.html">Savings Calculator</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="javascript:void(0)" id="linkPrivacy">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="linkTerms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">Residential Solar</a></li>
+            <li><a href="services.html">Commercial Solar</a></li>
+            <li><a href="services.html">Solar Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="color:#F97316;margin-right:8px;"></i> Gomti Nagar, Lucknow – 226010</li>
+            <li><i class="fas fa-phone" style="color:#F97316;margin-right:8px;"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope" style="color:#F97316;margin-right:8px;"></i> hello@localenergy.in</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>© 2024 Local Energy Pvt. Ltd. All rights reserved. | MNRE Empanelled Installer</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="wa-tooltip">Chat with us!</span></a>
+  <a href="contact.html" class="sticky-quote-btn" id="stickyQuote"><i class="fas fa-bolt"></i> Get Your Quotes</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const stickyQuote = document.getElementById('stickyQuote');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('hamburger')?.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const obs = new IntersectionObserver(e => e.forEach(el => el.isIntersecting && el.target.classList.add('visible')), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+  <!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+  <div class="legal-modal-overlay" id="modalOverlay">
+    <div class="legal-modal" id="modalPrivacy">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Privacy Policy</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you request a consultation, fill out a form, or communicate with us.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>We use the information we collect to evaluate your property's solar potential and provide accurate estimates.</p>
+        <h3>3. Data Sharing and Security</h3>
+        <p>Your data is securely stored and never sold to third parties.</p>
+      </div>
+    </div>
+    <div class="legal-modal" id="modalTerms">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Effective Date: April 2026</p>
+      </div>
+      <div class="modal-body">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By using our website, you agree to these terms.</p>
+        <h3>2. Service Description</h3>
+        <p>Local Energy provides solar panel installation and consultation services.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
